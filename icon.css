@@ -1,0 +1,25 @@
+#icon-space{
+  width: 500px;
+  height: 500px;
+  border: 2px solid #000000;
+}
+#trace-image {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0; 
+  z-index: 1001;
+  cursor: none;
+  pointer-events: none;
+}
+.set-image {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  z-index: 1001;
+  cursor: none;
+  pointer-events: none;
+  transform: scale(1, 1);
+  transform: rotateZ(90);
+}
