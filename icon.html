@@ -9,16 +9,34 @@
 <body>
   <div id="icon-space"></div>
   <img id="trace-image"  src="./images/icon/nomal-left-eye.png"></img>
-  <button id="direction" value="left">右</button><input type="number" id="input-num" min="0" max="360">
   <div>
-    <input type="radio" name="eye-parts" value="nomal" checked>まんまる</input>
-    <input type="radio" name="eye-parts" value="happy" >にっこにこ</input>
-    <input type="radio" name="eye-parts" value="angry">とんがり</input>
+    回転<input type="number" id="input-num" min="0" max="360" value="0"></input>
+    サイズ<input type="number" id="input-num" min="0" max="360" value="100"></input>
+    <input type="button" id="make-icon" value="完成！" href="localhost" method="post"></input>
   </div>
-  <div>
-    <input type="radio" name="mouth-parts" value="nomal" checked>まんまる</input>
-    <input type="radio" name="mouth-parts" value="happy" >にっこにこ</input>
-    <input type="radio" name="mouth-parts" value="angry">とんがり</input>
+  <div class="icon-assets" id="left-eye" data-partsKind="left-eye">
+    <div class="assets-title">左目</div>
+    <input type="button" class="icon-button" data-partsName="nomal" value="のーまる"></input>
+    <input type="button" class="icon-button" data-partsName="happy" value="笑い"></input>
+    <input type="button" class="icon-button" data-partsName="angry" value="怒り"></input>
+  </div>
+  <div class="icon-assets" id="right-eye"  data-partsKind="right-eye">
+    <div class="assets-title">右目</div>
+    <input type="button" class="icon-button" data-partsName="nomal" value="のーまる"></input>
+    <input type="button" class="icon-button" data-partsName="happy" value="笑い"></input>
+    <input type="button" class="icon-button" data-partsName="angry" value="怒り"></input>
+  </div>
+  <div class="icon-assets" id="nose"  data-partsKind="nose">
+    <div class="assets-title">鼻</div>
+    <input type="button" class="icon-button" data-partsName="nomal" value="のーまる"></input>
+    <input type="button" class="icon-button" data-partsName="happy" value="笑い"></input>
+    <input type="button" class="icon-button" data-partsName="angry" value="怒り"></input>
+  </div>
+  <div class="icon-assets" id="mouth"  data-partsKind="mouth">
+    <div class="assets-title">口</div>
+    <input type="button" class="icon-button" data-partsName="nomal" value="のーまる"></input>
+    <input type="button" class="icon-button" data-partsName="happy" value="笑い"></input>
+    <input type="button" class="icon-button" data-partsName="angry" value="怒り"></input>
   </div>
   <script src="jquery-3.5.1.js"></script>
   <script src="./icon.js"></script>

@@ -1,7 +1,4 @@
 let src='./images/icon/nomal-left-eye.png';
-let direction='left';
-let radioval='nomal'
-let item='eye'
 
 $('#icon-space').on('mouseleave',function(){
   $('#trace-image').hide();  
@@ -34,37 +31,11 @@ $('#icon-space').on('click', function(e) {
   })
 });
 
-$('input[name="eye-parts"]:radio').change( function() {
-  radioval = $(this).val();
-  item='eye';
-  changeSrc();
-});  
-$('input[name="mouth-parts"]:radio').change( function() {
-  radioval = $(this).val();
-  item='mouth';
-  changeSrc();
-});  
+$('.icon-button').on('click',function(){
+  changeSrc($(this).data("partsname")+"-"+$(this).parent().data("partskind"));
+})
 
-
-$('#direction').on('click', function() {
-  if(direction==='left'){
-    $('#direction').text('左');
-    $('#direction').val('right');
-    direction='right';
-  }
-  else{
-    $('#direction').text('右');
-    $('#direction').val('left');
-    direction='left';
-  }
-  changeSrc();
-});
-
-function changeSrc(){
-  if(item==='eye'){
-    src='./images/icon/'+radioval+'-'+direction+'-'+item+'.png';
-  }else{
-    src='./images/icon/'+radioval+'-'+item+'.png';  
-  }
+function changeSrc(newSrc){
+  src='./images/icon/'+newSrc+'.png';
   $('#trace-image').attr('src'  , src);
 }

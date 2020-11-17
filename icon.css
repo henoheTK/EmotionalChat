@@ -23,3 +23,19 @@
   transform: scale(1, 1);
   transform: rotateZ(90);
 }
+
+.icon-assets{
+  z-index: 1;
+  border: dashed 2px gray;
+  padding: 10px;
+  margin: 10px;
+}
+.assets-title{
+  z-index: 2;
+  transform: translate(0px, -25px);
+  background: white;
+  position: absolute;
+}
+.icon-button{
+  z-index: 3;
+}
