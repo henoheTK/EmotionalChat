@@ -1,5 +1,19 @@
-extends layout
+doctype html
 
-block content
-  h1= title
-  p Welcome to #{title}
+html
+  head
+    title="あ"
+    link(rel="stylesheet",href="../stylesheets/index.css")
+  body #[input(type="radio" name="emotion" value="nomal" checked)]
+    |感情0人間 #[inputc(type="radio" name="emotion" value="happy")]
+    |わらウワァー #[input(type="radio" name="emotion" value="angry")]
+    |ぷんぷんまる
+
+    div#faces
+      img(src="../images/"+icon[0]['dataValues']['head_name']+"_face.png", alt="")
+    - console.log('へによぉん');
+    - console.log(icon[0]['dataValues']);
+    h1 #{icon[0]['dataValues']['id']}
+
+    script(src="../javascripts/jquery-3.5.1.js")
+    script(src="../javascripts/index.js")

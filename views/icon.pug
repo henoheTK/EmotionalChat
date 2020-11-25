@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title="あ"
+    link(rel="stylesheet",href="../stylesheets/icon.css")
+  body
+    block content
+      div#icon-space
+      div.page-container
+      img(src="../images/nomal-left-eye.png")#trace-image
+      div #[input(type="number" min="0" max="360" value="0")#rot-num]
+        |回転 #[input(type="number" min="0" max="1" value="1")#size-num]
+        |サイズ #[input(type="button" value="完成！" onclick="location.href='./setget'")#make-icon]
+      div(data-partsKind=`left-eye`).icon-assets#left-eye
+        div.assets-title
+        |左目 #[input(type="button" data-partsName=`nomal` value="のーまる").icon-button] #[input(type="button" data-partsName=`happy` value="笑い").icon-button] #[input(type="button" data-partsName=`angry` value="怒り").icon-button]
+      div(data-partsKind=`right-eye`).icon-assets#right-eye
+        div.assets-title
+        |右目 #[input(type="button" data-partsName=`nomal` value="のーまる").icon-button] #[input(type="button" data-partsName=`happy` value="笑い").icon-button] #[input(type="button" data-partsName=`angry` value="怒り").icon-button]
+      div(data-partsKind=`nose`).icon-assets#nose
+        div.assets-title
+        |鼻 #[input(type="button" data-partsName=`nomal` value="のーまる").icon-button] #[input(type="button" data-partsName=`happy` value="笑い").icon-button] #[input(type="button" data-partsName=`angry` value="怒り").icon-button]
+      div(data-partsKind=`mouth`).icon-assets#mouth
+        div.assets-title
+        |口 #[input(type="button" data-partsName=`nomal` value="のーまる").icon-button] #[input(type="button" data-partsName=`happy` value="笑い").icon-button] #[input(type="button" data-partsName=`angry` value="怒り").icon-button]
+      script(src="../javascripts/jquery-3.5.1.js")
+      script(src="../javascripts/icon.js")
