@@ -16,19 +16,20 @@ var Emotion = require('./models/emotion');
 var Icon = require('./models/icon');
 var Parts = require('./models/head-parts');
 var Comment = require('./models/comment');
-User.sync().then(() => {
-  Room.belongsTo(User, {foreignKey: 'createdBy'});
+  
+Icon.sync().then(()=>{
+  Parts.belongsTo(Parts, {foreignKey: 'iconId'});
+  Parts.sync();    
+})
+
+/***
+Room.belongsTo(User, {foreignKey: 'createdBy'});
   Room.sync();
   Comment.belongsTo(User, {foreignKey: 'userId'});
   Comment.sync();
   Emotion.belongsTo(User, {foreignKey: 'createdBy'});
   Emotion.sync();
-  Icon.belongsTo(Icon);
-  Icon.sync().then(() => {
-    Parts.belongsTo(Parts, {foreignKey: 'iconId'});
-    Parts.sync();
-  });
-});
+***/
 
 var app = express();
 app.use(helmet());

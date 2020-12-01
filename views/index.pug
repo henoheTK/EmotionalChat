@@ -5,15 +5,15 @@ html
     title="あ"
     link(rel="stylesheet",href="../stylesheets/index.css")
   body #[input(type="radio" name="emotion" value="nomal" checked)]
-    |感情0人間 #[inputc(type="radio" name="emotion" value="happy")]
+    |感情0人間 #[input(type="radio" name="emotion" value="happy")]
     |わらウワァー #[input(type="radio" name="emotion" value="angry")]
     |ぷんぷんまる
 
     div#faces
-      img(src="../images/"+icon[0]['dataValues']['head_name']+"_face.png", alt="")
-    - console.log('へによぉん');
-    - console.log(icon[0]['dataValues']);
-    h1 #{icon[0]['dataValues']['id']}
-
+      -const img_path='../images/'
+      each part in parts
+        tr
+          td
+            img.parts_image(src=`${img_path}${part.parts_name}_${part.parts_kind}.png` style=`width : ${part.parts_sizeX}px; height : ${part.parts_sizeY}px; transform : translate(${part.parts_posX-part.parts_sizeX/2}px,${part.parts_posY-part.parts_sizeY/2}px)`) 
     script(src="../javascripts/jquery-3.5.1.js")
     script(src="../javascripts/index.js")

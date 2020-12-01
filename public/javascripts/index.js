@@ -23,23 +23,46 @@ function makeFace(faceId){
     'nose',
     'mouth'
   ];
+  const parts_size={
+    face:10,
+    hair:100,
+    leftEye:30,
+    rightEye:30,
+    mouth:30,
+    nose:30
+  }
+  
+  
   
   let div=$('<div class = "face"></div>');
+  
+  for(let i = 0; i < faceParts.length; i++){
+    let parts = $('<img class="' + faceParts[i]+'"></img>'); 
+    parts.attr('src','`'+img_path +'${icon[' + faceId + '].parts_name}' + '_' + faceParts[i]+'`');
+    console.log('" src ="`' + img_path +'${icon[' + faceId + '].parts_name}' + '_' + faceParts[i]);
+    randomMoveTimer(parts , 1000);
+    div.append(parts);
+  }  
   /***
+
+
+  //          a(href=`/schedules/${icon.iconId}`) 
+    
   for(let i = 0; i < faceParts.length; i++){
     let parts = $('<img class = "' + faceParts[i] + '-image" src ="'+"'" + img_path + "'" +'+icon[' + faceId + ']['+"'dataValues'"+']['+"'" + faceParts[i]+'_name' +"'"+ ']+' + "'" +'_' + faceParts[i] + '.png'+ "'" + '" style = '
-      +'"width:" + icon[' + faceId + ']["dataValues"]["' + faceParts[i] + '_size"] + "px;" + "height:" + (icon[' + faceId + ']["dataValues"]["' + faceParts[i] + '_size"] * 100) + px;'
-      +'transform: translateX("+icon[' + faceId + ']["dataValues"]["' + faceParts[i] + '_posX"] + "px) translateY(" + icon[' + faceId + ']["dataValues"]["' + faceParts[i] + '_posY"] + "px)"></img>');
+    +'"width:" + icon[' + faceId + ']["dataValues"]["' + faceParts[i] + '_size"] + "px;" + "height:" + (icon[' + faceId + ']["dataValues"]["' + faceParts[i] + '_size"] * 100) + px;'
+    +'transform: translateX("+icon[' + faceId + ']["dataValues"]["' + faceParts[i] + '_posX"] + "px) translateY(" + icon[' + faceId + ']["dataValues"]["' + faceParts[i] + '_posY"] + "px)"></img>');
     randomMoveTimer(parts , 1000);
     div.append(parts);
   }
-  ***/
+  
 
+  
 
-  let faceImage       = $('<img class="face-image"  src="'+img_path+'face.png" style = '
-      +'"width:" + icon[0]["dataValues"]["face_size"] + "px;" + "height:" + (icon[0]["dataValues"]["face_size"] * 100) + px;'
+let faceImage       = $('<img class="face-image"  src="'+img_path+'nomal_face.png" style = '
+      +'width:icon[0]["dataValues"]["face_size"]*' + parts_size['face'] + 'px; + "height:" + (icon[0]["dataValues"]["face_size"] * ' + parts_size['face'] + ') + px;'
       +'transform:translateX("+icon[0]["dataValues"]["face_posX"] + "px) translateY("+icon[0]["dataValues"]["face_posX"] + "px)"></img>');
-    let hairImage     = $('<img class="hair-image"  src="'+img_path+'hair.png" style = '
+    let hairImage     = $('<img class="hair-image"  src="'+img_path+'nomal_hair.png" style = '
       +'"width:" + icon[0]["dataValues"]["hair_posX"] + "px;" + "height:" + (icon[0]["dataValues"]["hair_size"] * 100) + px;'
       +'transform:translateX("+icon[0]["dataValues"]["hair_posX"] + "px) translateY("+icon[0]["dataValues"]["hair_posX"] + "px)"></img>');
     let leftEyeImage  = $('<img class="left-eye" src="'+img_path+'nomal-left-eye.png" style = '
@@ -67,10 +90,10 @@ function makeFace(faceId){
     div.append( noseImage );
     randomMoveTimer(noseImage , 1000);
 
-
-  randomMoveTimer(div , 1000);
-
-  $('#faces').append( div );
+    randomMoveTimer(div , 1000);
+    
+    ***/
+    $('#faces').append( div );
 }
 
 function randomMoveTimer(object , time){

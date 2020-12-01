@@ -7,10 +7,16 @@ html
     block content
       div#icon-space
       div.page-container
-      img(src="../images/nomal-left-eye.png")#trace-image
+      img(src="../images/nomal_left-eye.png")#trace-image
       div #[input(type="number" min="0" max="360" value="0")#rot-num]
-        |回転 #[input(type="number" min="0" max="1" value="1")#size-num]
+        |回転 #[input(type="number" min="0" max="500" value="30")#size-num]
         |サイズ #[input(type="button" value="完成！" onclick="location.href='./setget'")#make-icon]
+      div(data-partsKind=`face`).icon-assets#left-eye
+        div.assets-title
+        |顔 #[input(type="button" data-partsName=`nomal` value="のーまる").icon-button] #[input(type="button" data-partsName=`happy` value="笑い").icon-button] #[input(type="button" data-partsName=`angry` value="怒り").icon-button]
+      div(data-partsKind=`hair`).icon-assets#left-eye
+        div.assets-title
+        |髪 #[input(type="button" data-partsName=`nomal` value="のーまる").icon-button] #[input(type="button" data-partsName=`happy` value="笑い").icon-button] #[input(type="button" data-partsName=`angry` value="怒り").icon-button]
       div(data-partsKind=`left-eye`).icon-assets#left-eye
         div.assets-title
         |左目 #[input(type="button" data-partsName=`nomal` value="のーまる").icon-button] #[input(type="button" data-partsName=`happy` value="笑い").icon-button] #[input(type="button" data-partsName=`angry` value="怒り").icon-button]

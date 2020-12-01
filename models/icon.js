@@ -2,15 +2,17 @@
 const loader = require('./sequelize-loader');
 const Sequelize = loader.Sequelize;
 
-
-
 const Icon = loader.database.define(
-  'Icon',
+  'icon',
   {
     iconId: {
       type: Sequelize.INTEGER,
       allowNull: false,
       primaryKey: true
+    },
+    userId:{
+      type: Sequelize.INTEGER,
+      allowNull: false
     }
   },
   {

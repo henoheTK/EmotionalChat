@@ -3,15 +3,16 @@ const loader = require('./sequelize-loader');
 const Sequelize = loader.Sequelize;
 
 const headParts = loader.database.define(
-  'headParts',
+  'parts',
   {
     iconId: {
       type: Sequelize.INTEGER,
-      allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      allowNull: false
     },
     parts_kind: {
       type: Sequelize.STRING,
+      primaryKey: true,
       allowNull: false
     },
     parts_name: {
@@ -31,6 +32,10 @@ const headParts = loader.database.define(
       allowNull: false
     },
     parts_sizeY: {
+      type: Sequelize.INTEGER,
+      allowNull: false
+    },
+    parts_rot: {
       type: Sequelize.INTEGER,
       allowNull: false
     }

@@ -12,17 +12,30 @@
   z-index: 1001;
   cursor: none;
   pointer-events: none;
+  transform-origin: 50% 50%; 
 }
 .set-image {
-  width: 100px;
-  height: 100px;
   position: absolute;
   z-index: 1001;
   cursor: none;
   pointer-events: none;
-  
+}
+.face{
+  z-index:900;
 }
 
+.right-eye,.left-eye{
+  z-index:999;
+}
+.hair{
+  z-index:1000;
+}
+.nose{
+  z-index:999;
+}
+.mouth{
+  z-index:999;
+}
 .icon-assets{
   z-index: 1;
   border: dashed 2px gray;
